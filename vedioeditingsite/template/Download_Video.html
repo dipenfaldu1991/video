@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Download</title>
+
+<style>
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+
+
+.button2 {
+  background-color: #262930; 
+  color: white; 
+  border: 2px solid #008CBA;
+}
+
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+
+</style>
+
+
+</head>
+
+<body style="margin:0px;padding:0px;font-family:Calibri">
+<div style="width:100%; height:607px;">
+
+	<!--<!--Menu Side Code Start--
+		<div style="background-color:#1B1C1F;width:20%;float:left;height:100%;">
+			<div style="margin-top:20px;margin-left:5px;">
+				<img src="New_Logo.png" width="250px" />
+			</div>
+			<div>
+				<table style="margin-top:12px; color:#FFFFFF;font-family:Calibri" border="0" width="100%">
+					<tr>
+						<td> Loop This Clip</td>
+					</tr>
+					<tr>
+						<td><input type="text" /><input type="text" /><input type="text" /><input type="text" /></td>
+					</tr>
+				</table>
+			<div style="margin-top:20px;padding-left:15px; color:#FFFFFF">
+				Final Out put will be 10 secound
+			</div>--
+			<div style="margin-top:340px;">
+				<center>
+				<button class="button" style="vertical-align:middle"><span>Create Now</span></button>
+				</center>
+			</div>
+		
+			</div>
+		</div>
+	<!--End Menu Side Code Start-->
+	
+	<!--Main Video Body Code Start-->
+		<div style="background-color:#262930;float:right; width:100%;height:100%;">
+		
+			<div style="margin-top:85px;color:#CCCCCC"><center>
+				<div style="margin-bottom:30px; font-size:24px"><center>Your Edited Video Preview here</center></div>	
+				<video width="590" controls>
+  					<source src="{{MEDIA_URL}}/final/{{file}}" type="video/mp4">
+				</video></center>
+			</div>	
+			<div style="margin-top:15px;"><center><a href="{{MEDIA_URL}}/final/{{file}}" role="button" target="_blank" download="{{file}}"><button class="button button2">Download Now</button></a></center></div>	
+		</div>
+		
+	<!--End Main Video Body Code Start-->
+	<!--Footer Code Start-->
+		<!--<div style="background-color:#000000;color:#CCCCCC; font-size:15px"><center>Powerd by Shrijione InfoTech Private Limited</center></div>-->
+	<!--End Footer Code Start-->
+<div>
+
+</body>
+</html>

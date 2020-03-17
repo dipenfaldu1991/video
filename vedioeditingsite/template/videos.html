@@ -1,0 +1,69 @@
+<html>
+{% load static %}
+<head>
+  <script>
+   var _validFileExtensions = [".mp4", ".mkv", ".3gp",".ovg",".mpeg",".mov"];    
+function Validate(oForm) {
+    var arrInputs = oForm.getElementsByTagName("input");
+    for (var i = 0; i < arrInputs.length; i++) {
+        var oInput = arrInputs[i];
+        if (oInput.type == "file") {
+            var sFileName = oInput.value;
+            for (var j = 0; j < _validFileExtensions.length; j++) {
+                    var sCurExtension = _validFileExtensions[j];
+                    if (sFileName.substr(sFileName.length - sCurExtension.length, sCurExtension.length).toLowerCase() == sCurExtension.toLowerCase()) {
+                        blnValid = true;
+                        break;
+                    }
+                }
+                
+                if (!blnValid) {
+                    alert("Sorry, " + sFileName + " is invalid, allowed extensions are: " + _validFileExtensions.join(", "));
+                    return false;
+                }
+            if (sFileName.length > 0 && sFileName.length <51) {
+                var blnValid = false;
+                
+            }
+            else{
+                alert('Rename file name. File name langth is less than 50 charecters.')
+                return false;
+            }
+        }
+    }
+  
+    return true;
+}
+  </script>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+
+    <script>
+    function myFunction() {
+    var x = document.getElementById("file").value;
+    
+        if(x.length>51)
+        {
+            alert(x.length);
+            history.go(0);
+            return false;
+        }   
+    }
+  </script>
+<meta charset="UTF-8">
+<title>Upload Videos</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/abc.css' %}">
+    <script type="text/javascript" src="{% static 'js/xyz.js' %}"></script>
+</head>
+<body>
+
+<form  method="POST" action="{% url 'upload' %}" enctype="multipart/form-data" onsubmit="return Validate(this)">
+    {% csrf_token %}
+  <input type="file"  name="file1" id="file" onchange="return fileValidation()">
+  <p>Drag your files here or click in this area.</p>
+  <button type="submit" >Upload</button>
+</form>
+
+
+</body>
+</html>
